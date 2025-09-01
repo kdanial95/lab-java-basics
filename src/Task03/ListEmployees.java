@@ -14,8 +14,8 @@ public class ListEmployees {
         String[] Names = {"Danial Khan", "Quintin Wise", "Vivian Gonzalez","Marisa Fennell","Katie Morley","Broderick Shumate","Gunnar Alvarado","Anjali Rollins","Jimmy Ott","Brigid Martinez","Joe Wood"};
         String[] Designations = {"Chief","Central","District","Future","Chief","Human","Internal","Forward","International","Internal"};
 
-        for (int i = 1; i <= 8 ; i++) {
-            Employee emp = new Employee();
+        for (int i = 1; i <= 10 ; i++) {
+            Employee emp = (i <= 8) ? new Employee() : new Intern();
             emp.setId(i);
             emp.setEmpName(Names[(int) (Math.random()*10)]);
             emp.setDesignation(Designations[(int) (Math.random()*10)]);
@@ -23,22 +23,6 @@ public class ListEmployees {
 
             employees.add(emp);
         }
-
-        Intern internee = new Intern();
-        internee.setId(9);
-        internee.setEmpName("John Doe");
-        internee.setDesignation("internee");
-        internee.setSalary(50000);
-
-        employees.add(internee);
-
-        Intern internee2 = new Intern();
-        internee2.setId(10);
-        internee2.setEmpName("John Doe Jr");
-        internee2.setDesignation("internee");
-        internee2.setSalary(10000);
-
-        employees.add(internee);
     }
 
     public static void main(String[] args) {
